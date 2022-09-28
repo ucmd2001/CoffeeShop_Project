@@ -1,0 +1,245 @@
+/* 最上層顏色 */
+.container-intro{
+    background:darkblue;
+    color:rgb(255, 255, 255);
+    font-size: 10px;
+    padding: 15px;
+    
+}
+h2,h3{
+    color: blue;
+}
+article{
+    text-align: center;
+}
+/* 回到最上層按鈕 */
+
+.back-to-top {
+    display: none; /* 默認是隱藏的，這樣在第一屏才不顯示 */
+    position: fixed; /* 位置是固定的 */
+    bottom: 20px; /* 顯示在頁面底部 */
+    right: 30px; /* 顯示在頁面的右邊 */
+    z-index: 99; /* 確保不被其他功能覆蓋 */
+    border: 1px solid gray; /* 顯示邊框 */
+    outline: none; /* 不顯示外框 */
+    background-color: #fff; /* 設置背景背景顏色 */
+    color: blue; /* 設置文本顏色 */
+    cursor: pointer; /* 滑鼠移到按鈕上顯示手型 */
+    padding: 10px 15px 15px 15px; /* 增加一些內邊距 */
+    border-radius: 15px; /* 增加圓角 */    
+}
+    
+.back-to-top:hover {
+    background-color:lightskyblue; /* 滑鼠移上去時，反轉顏色 */
+    color: #fff;
+}
+/* 中間內容 */
+
+/* 中間標題 */
+.indextitle{
+    text-align: center;
+    color: blue;
+}
+/* 調整中間標題 */
+.main-content section h4{
+    color: blue;
+}
+/* 中間Bootstrap icon */
+
+.bs-icons ul li a span.icons{
+    font-size: 100px;
+    display: block;
+    padding: 50px;
+    text-align: center;
+}
+
+/* 調整li */
+.bs-icons ul li{
+    list-style: none;
+}
+/* 調整ul lu 超連結a  */
+.bs-icons ul li a{
+    color: rgb(0, 81, 255);
+    text-decoration: none;
+    cursor: pointer;
+}
+/* 調整滑鼠移上去之後的顏色 */
+.bs-icons ul li .bi-person-circle:hover{
+    color: white;
+    background-color: rgb(0, 81, 255);
+    border-radius:99em;
+    transition: 0.5s;
+}
+.bs-icons ul li .bi-bug:hover{
+    color: white;
+    background-color: rgb(0, 81, 255);
+    border-radius: 99em;
+    transition: 0.5s;
+}
+.bs-icons ul li .bi-bug-fill:hover{
+    color: white;
+    background-color: rgb(0, 81, 255);
+    border-radius: 99em;
+    transition: 0.5s;
+}
+
+
+/* label 會員系統頁登入label */
+.main-content .signinlabel{
+    width: 100px;
+    display: inline-block;
+}
+/*label 會員系統頁註冊label */
+.main-content .pwmember{
+    width: 220px;
+    display: inline-block;
+}
+
+
+
+/* 輸入框旁邊小提示(small標籤) */
+small{
+    font-size: 13px;
+    color: rgba(76, 87, 102, 0.6);
+    line-height: 1.42857143;
+    font-weight: normal;
+}
+
+/* 登入帳號密碼輸入格 */
+.main-content form .account,
+.main-content form .password{
+    margin: 5px;
+    width:30%;
+    border-radius: 10px;
+    border-color:lightgray;
+}
+
+/* 註冊輸入格 */
+.main-content form .nickname_signup,
+.main-content form .account_signup,
+.main-content form .password_signup,
+.main-content form .password_signup_c{
+    margin: 5px;
+    width:30%;
+    border-radius: 10px;
+    border-color:lightgray;
+    vertical-align: middle; 
+    
+}
+/* label 變更密碼頁 */
+.main-content .pwchange{
+    width: 280px;
+    display: inline-block;
+}
+/* 更新密碼頁輸入格 */
+.main-content .cbpassword{
+    margin: 5px;
+    width:30%;
+    border-radius: 10px;
+    border-color:lightgray;
+    vertical-align: middle; 
+}
+
+/* 登入及註冊按鈕 */
+.main-content form #signupbtn {
+    font-size: 15px;
+    margin-top: 10px;
+    width: 100px;
+    height: 40px;
+    background-color:rgb(0, 140, 255) ;
+}
+.main-content form #signinbtn{
+    font-size: 15px;
+    margin-top: 20px;
+    width: 100px;
+    height: 40px;
+    background-color:rgb(0, 140, 255) ;
+}
+
+/* 個人頁登出按鈕 */
+#logoutbtn{
+    font-size: 15px;
+}
+/* 個人頁超連結 */
+.main-content .setting_personal_info{
+    text-decoration: none;
+    font-size: large;
+}
+
+/* 個人資訊頁呈現方式 */
+.main-content .setting{
+    font-size: 10px;
+}
+/* 左邊作品列 */
+.sidenav1{
+    text-align: center;
+    padding: 30px;
+    background-color: rgb(255, 255, 255);
+    background-size:30%;
+    color: blue;
+}
+/* 左邊作品列超連結邊框 */
+
+.sidenav1 a{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(7, 7, 7);
+    font-size: 13px;
+}
+.sidenav1 a:hover{
+    color: rgb(2, 2, 2);
+}
+/* 左邊作品超連結設計 */
+.page{
+    width: 100%;
+    padding: 8px;
+    background-color: rgb(207, 207, 207);
+    margin: 5px;
+    text-align: center;
+    border-radius: 15px;
+    color: black;
+}
+.page:hover{
+    background-color:#5e5e5e ; 
+    opacity: .6;   
+    transition: 1s;
+    border-radius: 10px;
+    color: black;
+}
+@media (max-width:600px){
+    .sidenav1{
+        height: auto;
+    }
+    .context{
+        height:auto
+    }
+}
+
+/* 中間內容調整 */
+.main-content{
+    background-color: white;
+    padding: 30px 40px;
+}
+/* ajax爬蟲中間內容調整 */
+.main-content .ajax_intro{
+    width: 90%;
+    display: inline-block;
+}
+
+.perloader{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top:0%;
+    background-color: #5e5e5e;
+}
+.spinner-border{
+    color: #fff;
+    position: fixed;
+    margin-left: auto;
+    margin-top: auto;
+    left: 50%;
+    top: 50%;
+    right: 50%;
+}

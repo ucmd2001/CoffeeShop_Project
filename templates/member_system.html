@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap響應式網站 -->
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <!-- 連結Fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 連結Boostarp icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- 連結style.CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <title>Coffee Shop Project</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="container-intro text-center">
+        <div class="row">
+            <div class="col-sm-4">
+                <h4 style="padding-top:15px;">Coffee Shop Project</h4>
+            </div>
+        </div>
+    </div>
+    <!-- Body -->
+    <!-- loading -->
+    <div class="perloader text-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+        <!-- 三欄位中間層 -->
+        <div class="container-fluid">
+            <div class="row content">
+                <!-- 左邊欄位 -->
+                <div class="col-sm-2 sidenav1">
+                    <h3>功能列</h3>
+                    <div class="page">
+                        <a href="/">首頁</a>
+                    </div>
+                    <div class="page">
+                        <a href="/member_system">會員系統</a>
+                    </div>
+                </div>
+                <!-- 中間欄位 -->
+                <div class="col-sm-8 main-content text-left">
+                <h2>會員系統頁面</h2>
+                <br/>
+                <p>這是一個簡單的會員頁面，在這邊可以簡單的登入，註冊，登入成功後可以更改密碼</p>
+                <h3>會員登入</h3>
+                <form action="/signin" method="POST" class="memberForm">
+                    <label class="signinlabel">信箱</label>
+                    <input type="text" class="account form-contorl" name="email" placeholder="Your Email address" /> <br/>
+                    <label class="signinlabel">密碼</label>
+                    <input type="password" class="password form-contorl" name="password" id="cbpassword" placeholder="Your Password"/> <br/>
+                    <input type="checkbox" class="checkbox form-contorl" onclick="cbs()" > 顯示密碼 <br/>
+                    <button type="submit" class="btn btn-info" id="signinbtn">登入</button>
+                </form>
+                <!-- type="button class="btn btn-info"" -->
+                <br/>
+                <p>登入、註冊，登入成功後也可以更改密碼及確認個人資訊</p>
+                <h3>會員註冊</h3>
+                <form action="/signup" method="POST" id="signupForm" class="memberForm">
+                    <label class="pwmember">暱稱 <small>(輸入你的暱稱。)</small></label> 
+                    <input type="text" class="nickname_signup form-contorl" name="nickname" id="nickname" placeholder="Your Nickname"  /> <br/>
+                    <label class="pwmember">信箱 <small>(輸入你要註冊的信箱。)</small></label>
+                    <input type="text" class="account_signup form-contorl" name="email" id="email" placeholder="Your email" /> <br/>
+                    <label class="pwmember">密碼 <small>(輸入你的密碼,至少八位數字。)</small></label>
+                    <input type="password" class="password_signup form-contorl" name="password" id="password" placeholder="Your password" /> <br/>
+                    <label class="pwmember">再次確認密碼 <small>(再次輸入密碼。)</small></label> 
+                    <input type="password" class="password_signup_c form-contorl" name="password_confrim" id="password_confrim" placeholder="Confirm Your password" /> <br/>
+                    <button type="submit" class="btn btn-info" disabled="disabled" onClick="window.alert('註冊成功!');" id="signupbtn">註冊</button>
+                </form>
+                </div>
+                <!-- 右邊欄位 先空白-->
+                <div class="col-sm-2 sidenav2">
+                </div>
+            </div>
+        </div>        
+        <!-- Footer -->
+    <script>
+        // Checkbox顯示密碼
+        function cbs(){
+            var x = document.getElementById("cbpassword");
+            if (x.type === "password"){
+                x.type = "text";
+            } else {
+                x.type ="password";
+            }
+        }
+    </script>
+    <script>
+        // 註冊沒有輸入沒辦法按送出
+        const nickname_signup=document.getElementById("nickname");
+        const email_signup =document.getElementById("email");
+        const password_signup=document.getElementById("password");
+        const password_c_signup =document.getElementById("password_confrim");
+        const signupbtn = document.getElementById("signupbtn");
+        const signupForm = document.getElementById("signupForm");
+        signupForm.addEventListener("input",() => {
+            if (nickname_signup.value.length >0 && email_signup.value.length >3 && password_signup.value.length >7 && password_c_signup.value.length >7) 
+            {
+                signupbtn.removeAttribute("disabled");
+            } else {
+                signupbtn.setAttribute("disabled","disabled")
+            }
+        });
+    </script>
+        <!-- 回到頂部按鈕 -->
+        <button class="js-back-to-top back-to-top" title="Top">&#65085;</button>
+        <!-- 引用jQuery -->
+        <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+    <script>
+        // 回到頂部按鈕
+        $(function () {
+        var $win = $(window);
+        var $backToTop = $('.js-back-to-top');
+
+        // 當用戶滾動到離頂部100像素時，展示回到頂部按鈕
+
+        $win.scroll(function () {
+        if ($win.scrollTop() > 100) {
+        $backToTop.show();
+        } 
+        else {$backToTop.hide();}
+        });
+
+        // 當用戶點擊按鈕時，通過動畫效果返回頭部
+        $backToTop.click(function () {
+        $('html, body').animate({scrollTop: 0}, 200);
+        });
+        });
+        // loading畫面控制
+        $(window).load(function(){
+            $(".spinner-border").fadeOut('slow');
+            $(".perloader").fadeOut('slow');
+        });
+    </script>
+
+    <!-- Footer -->
+
+</body>
+</html>
